@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login – Certificate App</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body { background: #f5f7fa; }
+    .card { border-radius:1rem; border:none; }
+    .btn-primary { border-radius:.5rem; padding:.75rem; }
+  </style>
+</head>
+<body>
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div class="card shadow-lg p-4" style="max-width:380px; width:100%">
+    <h2 class="text-center text-primary mb-4">Sign In</h2>
+
+    <!-- point form at your new POST /login endpoint -->
+    <form action="/login" method="post" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+                name="username"
+                type="text"
+                id="username"
+                class="form-control"
+                placeholder="Enter username"
+                required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+                name="password"
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="••••••••"
+                required />
+      </div>
+
+      <!-- show error if ?error=1 -->
+      <div
+              class="alert alert-danger py-2"
+              id="errorMsg"
+              style="display: none;"
+      >Invalid username or password.</div>
+
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  // detect ?error=1
+  if (new URLSearchParams(location.search).get('error') === '1') {
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+</script>
+</body>
+</html>

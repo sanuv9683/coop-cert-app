@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+:root {
+    --primary: #4a90e2;
+    --accent: #50e3c2;
+    --bg: #f5f7fa;
+    --text: #333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Shared Button */
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: background 0.2s ease;
+}
+button:hover {
+    background: var(--accent);
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hide print button when printing */
+@media print {
+    .no-print { display: none; }
+}
