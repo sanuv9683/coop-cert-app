@@ -7,3 +7,4 @@ module.exports = [
         passwordHash: process.env.ADMIN_PASSWORD_HASH
     }
 ];
+
